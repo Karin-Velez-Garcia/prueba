@@ -1,0 +1,276 @@
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'onserrat', sans-serif;
+        background-color: #111;
+        color: #fff;
+    }
+
+    h1,
+    h2 {
+        font-family: 'Bebas Neue', cursive;
+        letter-spacing: 1px;
+    }
+
+    /* Navegación */
+    nav {
+        background-color: rgba(51, 49, 49, 0.767);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 10px 0;
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+    }
+
+    .logo img {
+        border-radius: 15px;
+        width: 75px;
+    }
+
+    .menu {
+        display: flex;
+        gap: 30px;
+    }
+
+    .menu a {
+        color: #f0c040;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .menu a:hover {
+        color: #ffffff;
+    }
+
+    .social a {
+        margin-left: 15px;
+        font-size: 1.2rem;
+        transition: transform 0.3s, color 0.3s;
+    }
+
+    .social a:hover {
+        color: #ffffff;
+        transform: scale(1.2);
+    }
+
+    /* Portada */
+    header {
+        background: url('guitarrista.jpg') no-repeat center center/cover;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 60px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 4rem;
+        margin: 0;
+        color: #f0c040;
+    }
+
+    header p {
+        font-size: 1.5rem;
+        margin-top: 10px;
+    }
+
+    /* Sección genérica en dos columnas */
+    .seccion {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 60px;
+        background-color: #111;
+    }
+
+    .contenido {
+        display: flex;
+        width: 90%;
+        max-width: 1200px;
+        height: 80%;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .imagen {
+        flex: 1;
+        background-size: cover;
+        background-position: center;
+        min-height: 300px;
+         transition: transform 1s ease-in-out;
+    }
+
+    /* Fondos específicos para cada sección */
+    #sobre-mi .imagen {
+        background-image: url('0.jpg');
+    }
+
+    #cursos .imagen {
+        background-image: url('1.jpg');
+    }
+
+    #contacto .imagen {
+        background-image: url('9.jpg');
+    }
+
+    .texto {
+        flex: 1;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.6));
+        color: #f0f0f0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .texto h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #f0c040;
+    }
+
+    .texto p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    /* Iconos de redes en sección Contacto */
+    .social-icons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-icons a {
+        margin: 0 10px;
+    }
+
+    .social-icons img {
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s;
+        filter: brightness(50%);
+
+    }
+
+    .social-icons img:hover {
+        transform: scale(1.2);
+        filter: brightness(100%);
+    }
+
+    .hamburguesa {
+        display: none;
+        position: relative;
+        cursor: pointer;
+        font-size: 1 rem;
+        color: #f0c040;
+    }
+
+    .menu-responsive {
+        display: none;
+        position: absolute;
+        top: 30px;
+        right: 0;
+        background: #222;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 0 10px #000;
+    }
+
+    .menu-responsive.show {
+        display: block;
+    }
+
+    .menu-responsive a {
+        display: block;
+        color: #f0c040;
+        text-decoration: none;
+        padding: 8px 12px;
+        transition: background 0.3s;
+    }
+
+    .menu-responsive a:hover {
+        background: #444;
+        color: #fff;
+    }
+
+    .hamburguesa:hover .menu-responsive {
+        display: block;
+    }
+
+    /* Mostrar hamburguesa solo en móviles */
+    @media (max-width: 768px) {
+        .menu {
+            display: none;
+        }
+
+        .hamburguesa {
+            display: block;
+        }
+    }
+
+
+    /* Pie de página */
+    footer {
+        background: #000;
+        padding: 20px;
+        color: #888;
+        text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .contenido {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .imagen,
+        .texto {
+            width: 100%;
+            height: auto;
+        }
+
+        .texto {
+            padding: 20px;
+        }
+
+        .menu {
+            gap: 15px;
+            font-size: 0.9rem;
+        }
+
+        .social {
+            display: none;
+        }
+
+        .fade-in-js {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+
+        .fade-in-js.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }

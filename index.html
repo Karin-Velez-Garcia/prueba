@@ -1,104 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blues Joel - Guitarrista</title>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
 
-    body {
-      margin: 0;
-      font-family: 'Helvetica', sans-serif;
-      background-color: #111;
-      color: #fff;
-    }
+  <!-- Font Awesome CDN para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-    /* Navegación */
-    nav {
-      background-color: rgba(0, 0, 0, 0.9);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-    }
 
-    nav a {
-      color: #f0c040;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffffff;
-    }
-
-    header {
-      background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4') no-repeat center center/cover;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: 60px; /* espacio para la barra */
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 4rem;
-      margin: 0;
-      color: #f0c040;
-    }
-
-    header p {
-      font-size: 1.5rem;
-      margin-top: 10px;
-    }
-
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .social-icons a {
-      margin: 0 15px;
-      display: inline-block;
-    }
-
-    .social-icons img {
-      width: 40px;
-      height: 40px;
-      filter: invert(100%);
-      transition: transform 0.3s;
-    }
-
-    .social-icons img:hover {
-      transform: scale(1.2);
-    }
-
-    footer {
-      background: #000;
-      padding: 20px;
-      color: #888;
-      text-align: center;
-    }
-  </style>
 </head>
+
 <body>
 
   <!-- Barra de Navegación -->
-  <nav>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#contacto">Contáctanos</a>
-    <a href="#cursos">Cursos Online</a>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo"><img src="logo.png" alt="Logo Blues Joel"></div>
+      <div class="menu">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contáctanos</a>
+        <a href="#cursos">Cursos Online</a>
+      </div>
+      <!-- Menú hamburguesa -->
+      <div class="hamburguesa" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+        <div class="menu-responsive" id="menuResponsive">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#contacto">Contáctanos</a>
+          <a href="#cursos">Cursos Online</a>
+        </div>
+      </div>
+
+      <div class="social">
+        <a href="https://www.instagram.com/blues.joel?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank"><i class="fab fa-instagram" style="color: #f0c040;"></i></a>
+        <a href="https://www.facebook.com/share/16Ro7dof4b/" target="_blank"><i class="fab fa-facebook-f"
+            style="color: #f0c040;"></i></a>
+        <a href="https://www.tiktok.com/@bluesjoel?is_from_webapp=1&sender_device=pc" target="_blank"><i
+            class="fab fa-tiktok" style="color: #f0c040;"></i></a>
+        <a href="https://wa.me/50234970518" target="_blank"><i class="fab fa-whatsapp" style="color: #f0c040"></i></a>
+      </div>
+    </div>
   </nav>
+
+
 
   <!-- Portada -->
   <header>
@@ -107,40 +57,59 @@
   </header>
 
   <!-- Sección Sobre mí -->
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <p>Blues Joel es un guitarrista guatemalteco que transmite emociones a través de su guitarra. Vive por el ritmo del blues y la libertad del rock clásico.</p>
+  <section id="sobre-mi" class="seccion fade-in-js">
+    <div class="contenido">
+      <div class="imagen"></div>
+      <div class="texto">
+        <h2>Sobre mí</h2>
+        <p>Blues Joel es un guitarrista guatemalteco que transmite emociones a través de su guitarra. Vive por el ritmo
+          del blues y la libertad del rock clásico.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Sección Cursos Online -->
-  <section id="cursos">
-    <h2>Próximamente Cursos Online</h2>
-    <p>Estamos trabajando en una plataforma para ofrecer cursos de guitarra desde nivel principiante hasta avanzado. ¡Muy pronto disponibles!</p>
-  </section>
-
-  <!-- Sección Contacto -->
-  <section id="contacto">
-    <h2>Contáctanos</h2>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/bluesjoel" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-      </a>
-      <a href="https://www.facebook.com/bluesjoel" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-      </a>
-      <a href="https://www.tiktok.com/@bluesjoel" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
-      </a>
-      <a href="https://wa.me/50234970518" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-      </a>
+  <!-- Sección Cursos Online -->
+  <section id="cursos" class="seccion fade-in-js">
+    <div class="contenido">
+      <div class="imagen" style="background-image: url('1.jpg');"></div>
+      <div class="texto">
+        <h2>Cursos Online</h2>
+        <p>Estamos trabajando en una plataforma para ofrecer cursos de guitarra desde nivel principiante hasta avanzado.
+          ¡Muy pronto disponibles!</p>
+      </div>
     </div>
   </section>
+
+  <!-- Sección Contáctanos -->
+  <section id="contacto" class="seccion fade-in-js">
+    <div class="contenido">
+      <div class="imagen" style="background-image: url('9.jpg');"></div>
+      <div class="texto">
+        <h2>Contáctanos</h2>
+        <p>Puedes escribirnos por nuestras redes sociales para contrataciones, clases o colaboraciones. ¡Estamos para
+          ayudarte!</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/bluesjoel" target="_blank"><img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+          <a href="https://www.facebook.com/bluesjoel" target="_blank"><img
+              src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+          <a href="https://www.tiktok.com/@bluesjoel" target="_blank"><img
+              src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
+          <a href="https://wa.me/50234970518" target="_blank"><img
+              src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Pie de página -->
   <footer>
     <p>&copy; 2025 Blues Joel. Todos los derechos reservados.</p>
   </footer>
+  <script src="app.js"></script>
 
 </body>
+
 </html>
